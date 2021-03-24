@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    container_name: db-container
+    restart: on-failure
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=queries_challenge
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
