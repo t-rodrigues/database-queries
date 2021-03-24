@@ -5,7 +5,12 @@
   "license": "MIT",
   "scripts": {
     "lint:fix": "eslint --fix src --ext ts,tsx",
-    "test": "jest"
+    "test": "jest",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
+    "migration:create": "npm run typeorm -- migration:create -n",
+    "migration:run": "npm run typeorm -- migration:run",
+    "migration:revert": "npm run typeorm -- migration:revert",
+    "migration:show": "npm run typeorm -- migration:show"
   },
   "devDependencies": {
     "@types/jest": "^26.0.21",
